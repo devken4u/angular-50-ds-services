@@ -8,3 +8,8 @@ export type Employee = {
   name: string;
   work: string;
 };
+
+export type Fruit = {
+  name: string;
+};
+
