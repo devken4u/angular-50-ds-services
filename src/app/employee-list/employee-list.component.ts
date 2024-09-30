@@ -12,7 +12,7 @@ export class EmployeeListComponent {
   name: string = '';
   work: string = '';
 
-  addEmployee() {
+  add() {
     this.employeeList.push({
       name: this.name,
       work: this.work,

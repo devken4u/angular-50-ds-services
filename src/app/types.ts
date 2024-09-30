@@ -13,3 +13,7 @@ export type Fruit = {
   name: string;
 };
 
+export type Course = {
+  code: string;
+  name: string;
+};

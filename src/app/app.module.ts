@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { FruitListComponent } from './fruit-list/fruit-list.component';
+import { CourseListComponent } from './course-list/course-list.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { FruitListComponent } from './fruit-list/fruit-list.component';
     StudentListComponent,
     EmployeeListComponent,
     FruitListComponent,
+    CourseListComponent
   ],
   imports: [
     RouterOutlet,

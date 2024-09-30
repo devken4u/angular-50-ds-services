@@ -13,7 +13,7 @@ export class StudentListComponent {
   year: string = '';
   section: string = '';
 
-  addStudent() {
+  add() {
     this.studentList.push({
       name: this.name,
       year: this.year,

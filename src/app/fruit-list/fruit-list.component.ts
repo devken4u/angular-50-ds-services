@@ -11,7 +11,7 @@ export class FruitListComponent {
 
   name: string = '';
 
-  addEmployee() {
+  add() {
     this.fruitList.push({
       name: this.name,
     });
