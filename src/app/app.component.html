@@ -1,1 +1,8 @@
-<router-outlet></router-outlet>
+<div class="main-container">
+  <div class="tab-container">
+    @for(route of routes; track $index){ @if(route.path !== ""){
+    <a [routerLink]="[route.path]" class="tab">{{ route.path }}</a>
+    } }
+  </div>
+  <router-outlet></router-outlet>
+</div>

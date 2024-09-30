@@ -1,0 +1,32 @@
+<main>
+  <div>
+    <label for="name">Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <label for="year">Year: </label>
+    <input type="string" id="year" [(ngModel)]="year" />
+    <br />
+    <label for="section">Section: </label>
+    <input type="text" id="section" [(ngModel)]="section" />
+    <br />
+    <button (click)="addStudent()">Add to student</button>
+  </div>
+  <div>
+    <h1>Student list</h1>
+    @if(studentList.length === 0){
+    <h2>-Student list is empty-</h2>
+    }@else{
+    <ol>
+      @for(student of studentList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Name: {{ student.name }}
+        <br />
+        Year: {{ student.year }}
+        <br />
+        Section: {{ student.section }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>

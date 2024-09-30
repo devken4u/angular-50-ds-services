@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { routes } from './app.routes';
+import { Routes } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'typescript-ds-50';
+
+  routes: Routes;
+
+  constructor() {
+    this.routes = routes;
+  }
 }
