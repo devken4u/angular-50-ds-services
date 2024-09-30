@@ -19,8 +19,8 @@ export class StudentListComponent {
       year: this.year,
       section: this.section,
     });
-    // this.name = '';
-    // this.year = '';
-    // this.section = '';
+    this.name = '';
+    this.year = '';
+    this.section = '';
   }
 }

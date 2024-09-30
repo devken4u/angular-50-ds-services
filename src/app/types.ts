@@ -3,3 +3,8 @@ export type Student = {
   year: string;
   section: string;
 };
+
+export type Employee = {
+  name: string;
+  work: string;
+};
