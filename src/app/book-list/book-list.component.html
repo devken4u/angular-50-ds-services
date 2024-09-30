@@ -1,0 +1,32 @@
+<main>
+  <div>
+    <label for="name">Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <label for="publish-date">Publish date: </label>
+    <input type="text" id="publish-date" [(ngModel)]="publishDate" />
+    <br />
+    <label for="author">Author: </label>
+    <input type="text" id="author" [(ngModel)]="author" />
+    <br />
+    <button (click)="add()">Add to course</button>
+  </div>
+  <div>
+    <h1>Book list</h1>
+    @if( bookList.length === 0){
+    <h2>-Book list is empty-</h2>
+    }@else{
+    <ol>
+      @for( book of bookList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Name: {{ book.name }}
+        <br />
+        Publish date: {{ book.publishDate }}
+        <br />
+        Author: {{ book.author }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>

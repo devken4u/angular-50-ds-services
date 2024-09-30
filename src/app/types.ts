@@ -17,3 +17,9 @@ export type Course = {
   code: string;
   name: string;
 };
+
+export type Book = {
+  name: string;
+  publishDate: string;
+  author: string;
+};
