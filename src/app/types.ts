@@ -209,6 +209,9 @@ export type Presentation = {
 
 export type Tour = {
   place: string;
-  date: string; // or Date if you prefer
+  date: string;
 };
 
+export type Event = {
+  eventName: string;
+};

@@ -50,6 +50,7 @@ import { MealPlanListComponent } from './meal-plan-list/meal-plan-list.component
 import { BudgetListComponent } from './budget-list/budget-list.component';
 import { PresentationListComponent } from './presentation-list/presentation-list.component';
 import { TourListComponent } from './tour-list/tour-list.component';
+import { EventListComponent } from './event-list/event-list.component';
 
 @NgModule({
   declarations: [
@@ -99,7 +100,8 @@ import { TourListComponent } from './tour-list/tour-list.component';
     MealPlanListComponent,
     BudgetListComponent,
     PresentationListComponent,
-    TourListComponent
+    TourListComponent,
+    EventListComponent,
   ],
   imports: [
     RouterOutlet,
