@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="place">Place: </label>
+    <input type="text" id="place" [(ngModel)]="place" />
+    <br />
+    <label for="date">Date: </label>
+    <input type="date" id="date" [(ngModel)]="date" />
+    <br />
+    <button (click)="add()">Add to tour list</button>
+  </div>
+  <div>
+    <h1>Tour List</h1>
+    @if( tourList.length === 0){
+    <h2>-Tour list is empty-</h2>
+    }@else{
+    <ol>
+      @for( tour of tourList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Place: {{ tour.place }} <br />
+        Date: {{ tour.date }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>

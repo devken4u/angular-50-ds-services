@@ -49,6 +49,7 @@ import { ExerciseListComponent } from './exercise-list/exercise-list.component';
 import { MealPlanListComponent } from './meal-plan-list/meal-plan-list.component';
 import { BudgetListComponent } from './budget-list/budget-list.component';
 import { PresentationListComponent } from './presentation-list/presentation-list.component';
+import { TourListComponent } from './tour-list/tour-list.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import { PresentationListComponent } from './presentation-list/presentation-list
     MealPlanListComponent,
     BudgetListComponent,
     PresentationListComponent,
+    TourListComponent
   ],
   imports: [
     RouterOutlet,

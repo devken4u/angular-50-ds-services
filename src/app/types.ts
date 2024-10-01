@@ -206,3 +206,9 @@ export type Budget = {
 export type Presentation = {
   topicTitle: string;
 };
+
+export type Tour = {
+  place: string;
+  date: string; // or Date if you prefer
+};
+
