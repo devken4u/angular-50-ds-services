@@ -152,3 +152,8 @@ export type Video = {
   title: string;
   views: number;
 };
+
+export type TVShow = {
+  title: string;
+  time: string;
+};

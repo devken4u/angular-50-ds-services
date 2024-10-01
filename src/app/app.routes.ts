@@ -32,6 +32,7 @@ import { LaptopSpecificationListComponent } from './laptop-specification-list/la
 import { ComputerHardwareListComponent } from './computer-hardware-list/computer-hardware-list.component';
 import { MobileAppListComponent } from './mobile-app-list/mobile-app-list.component';
 import { VideoListComponent } from './video-list/video-list.component';
+import { TvShowListComponent } from './tv-show-list/tv-show-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'student-list', pathMatch: 'full' },
@@ -71,4 +72,5 @@ export const routes: Routes = [
   { path: 'computer-hardware-list', component: ComputerHardwareListComponent },
   { path: 'mobile-app-list', component: MobileAppListComponent },
   { path: 'video-list', component: VideoListComponent },
+  { path: 'tv-show-list', component: TvShowListComponent },
 ];
