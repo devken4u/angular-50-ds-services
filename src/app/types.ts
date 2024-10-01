@@ -124,3 +124,8 @@ export type Stationery = {
 export type Flower = {
   name: string;
 };
+
+export type Destination = {
+  place: string;
+  country: string;
+};

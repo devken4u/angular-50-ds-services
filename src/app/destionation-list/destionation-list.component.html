@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="place">Place: </label>
+    <input type="text" id="place" [(ngModel)]="place" />
+    <br />
+    <label for="country">Country: </label>
+    <input type="text" id="country" [(ngModel)]="country" />
+    <br />
+    <button (click)="add()">Add to destinations</button>
+  </div>
+  <div>
+    <h1>Destination List</h1>
+    @if( destinationList.length === 0){
+    <h2>-Destination list is empty-</h2>
+    }@else{
+    <ol>
+      @for( destination of destinationList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Place: {{ destination.place }} <br />
+        Country: {{ destination.country }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>

@@ -26,6 +26,7 @@ import { InventoryListComponent } from './inventory-list/inventory-list.componen
 import { LectureListComponent } from './lecture-list/lecture-list.component';
 import { StationeryListComponent } from './stationery-list/stationery-list.component';
 import { FlowerListComponent } from './flower-list/flower-list.component';
+import { DestionationListComponent } from './destionation-list/destionation-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'student-list', pathMatch: 'full' },
@@ -56,4 +57,5 @@ export const routes: Routes = [
   { path: 'lecture-list', component: LectureListComponent },
   { path: 'stationery-list', component: StationeryListComponent },
   { path: 'flower-list', component: FlowerListComponent },
+  { path: 'destination-list', component: DestionationListComponent },
 ];
