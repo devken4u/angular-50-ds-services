@@ -106,3 +106,8 @@ export type Classroom = {
   name: string;
   roomNumber: number;
 };
+
+export type Inventory = {
+  name: string;
+  quantity: number;
+};
