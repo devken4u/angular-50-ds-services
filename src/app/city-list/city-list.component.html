@@ -1,0 +1,20 @@
+<main>
+  <div>
+    <label for="city">City: </label>
+    <input type="text" id="city" [(ngModel)]="city" />
+    <br />
+    <button (click)="add()">Add to cities</button>
+  </div>
+  <div>
+    <h1>City list</h1>
+    @if( cityList.length === 0){
+    <h2>-City list is empty-</h2>
+    }@else{
+    <ol>
+      @for( city of cityList; track $index){
+      <li [style.marginBottom]="'20px'">City: {{ city.city }}</li>
+      }
+    </ol>
+    }
+  </div>
+</main>

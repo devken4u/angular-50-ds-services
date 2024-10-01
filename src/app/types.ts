@@ -23,3 +23,7 @@ export type Book = {
   publishDate: string;
   author: string;
 };
+
+export type City = {
+  city: string;
+}
