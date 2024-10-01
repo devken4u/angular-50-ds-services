@@ -166,3 +166,7 @@ export type Furniture = {
 export type PhoneAccessory = {
   name: string;
 };
+
+export type Building = {
+  name: string;
+};

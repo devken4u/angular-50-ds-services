@@ -1,0 +1,20 @@
+<main>
+  <div>
+    <label for="name">Building Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <button (click)="add()">Add to building list</button>
+  </div>
+  <div>
+    <h1>Building List</h1>
+    @if( buildingList.length === 0){
+    <h2>-Building list is empty-</h2>
+    }@else{
+    <ol>
+      @for( building of buildingList; track $index){
+      <li [style.marginBottom]="'20px'">Building Name: {{ building.name }}</li>
+      }
+    </ol>
+    }
+  </div>
+</main>

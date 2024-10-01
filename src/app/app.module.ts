@@ -40,6 +40,7 @@ import { VideoListComponent } from './video-list/video-list.component';
 import { TvShowListComponent } from './tv-show-list/tv-show-list.component';
 import { FurnitureListComponent } from './furniture-list/furniture-list.component';
 import { PhoneAccessoryComponent } from './phone-accessory/phone-accessory.component';
+import { BuildingListComponent } from './building-list/building-list.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { PhoneAccessoryComponent } from './phone-accessory/phone-accessory.compo
     VideoListComponent,
     TvShowListComponent,
     FurnitureListComponent,
-    PhoneAccessoryComponent
+    PhoneAccessoryComponent,
+    BuildingListComponent
   ],
   imports: [
     RouterOutlet,
