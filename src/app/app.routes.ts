@@ -43,6 +43,7 @@ import { PodcastListComponent } from './podcast-list/podcast-list.component';
 import { MealPlanListComponent } from './meal-plan-list/meal-plan-list.component';
 import { BudgetListComponent } from './budget-list/budget-list.component';
 import { ExerciseListComponent } from './exercise-list/exercise-list.component';
+import { PresentationListComponent } from './presentation-list/presentation-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'student-list', pathMatch: 'full' },
@@ -93,4 +94,5 @@ export const routes: Routes = [
   { path: 'exercise-list', component: ExerciseListComponent },
   { path: 'meal-plan-list', component: MealPlanListComponent },
   { path: 'budget-list', component: BudgetListComponent },
+  { path: 'presentation-list', component: PresentationListComponent },
 ];

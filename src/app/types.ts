@@ -202,3 +202,7 @@ export type Budget = {
   projectName: string;
   budget: number;
 };
+
+export type Presentation = {
+  topicTitle: string;
+};

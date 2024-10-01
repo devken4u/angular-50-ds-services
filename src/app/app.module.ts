@@ -48,6 +48,7 @@ import { PodcastListComponent } from './podcast-list/podcast-list.component';
 import { ExerciseListComponent } from './exercise-list/exercise-list.component';
 import { MealPlanListComponent } from './meal-plan-list/meal-plan-list.component';
 import { BudgetListComponent } from './budget-list/budget-list.component';
+import { PresentationListComponent } from './presentation-list/presentation-list.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +96,8 @@ import { BudgetListComponent } from './budget-list/budget-list.component';
     PodcastListComponent,
     ExerciseListComponent,
     MealPlanListComponent,
-    BudgetListComponent
+    BudgetListComponent,
+    PresentationListComponent,
   ],
   imports: [
     RouterOutlet,
