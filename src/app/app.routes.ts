@@ -87,4 +87,5 @@ export const routes: Routes = [
   { path: 'artist-list', component: ArtistListComponent },
   { path: 'composer-list', component: ComposerListComponent },
   { path: 'podcast-list', component: PodcastListComponent },
+  { path: 'exercise-list', component: PodcastListComponent },
 ];

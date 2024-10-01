@@ -188,3 +188,8 @@ export type Podcast = {
   title: string;
   speaker: string;
 };
+
+export type Exercise = {
+  name: string;
+  repetitions: number;
+};
