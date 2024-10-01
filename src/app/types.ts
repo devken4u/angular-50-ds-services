@@ -37,3 +37,8 @@ export type CarModel = {
   name: string;
   year: number;
 };
+
+export type Product = {
+  name: string;
+  price: number;
+};

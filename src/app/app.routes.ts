@@ -7,6 +7,7 @@ import { BookListComponent } from './book-list/book-list.component';
 import { CityListComponent } from './city-list/city-list.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { CarModelListComponent } from './car-model-list/car-model-list.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'student-list', pathMatch: 'full' },
@@ -18,4 +19,5 @@ export const routes: Routes = [
   { path: 'city-list', component: CityListComponent },
   { path: 'movie-list', component: MovieListComponent },
   { path: 'car-model-list', component: CarModelListComponent },
+  { path: 'product-list', component: ProductListComponent },
 ];
