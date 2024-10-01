@@ -86,3 +86,8 @@ export type Contact = {
   name: string;
   phoneNumber: string;
 };
+
+export type Music = {
+  title: string;
+  artist: string;
+};

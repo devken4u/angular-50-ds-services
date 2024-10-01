@@ -18,6 +18,7 @@ import { LanguageListComponent } from './language-list/language-list.component';
 import { GameListComponent } from './game-list/game-list.component';
 import { SoftwareListComponent } from './software-list/software-list.component';
 import { PhoneContactListComponent } from './phone-contact-list/phone-contact-list.component';
+import { MusicListComponent } from './music-list/music-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'student-list', pathMatch: 'full' },
@@ -40,4 +41,5 @@ export const routes: Routes = [
   { path: 'game-list', component: GameListComponent },
   { path: 'software-list', component: SoftwareListComponent },
   { path: 'phone-contact-list', component: PhoneContactListComponent },
+  { path: 'music-list', component: MusicListComponent },
 ];
