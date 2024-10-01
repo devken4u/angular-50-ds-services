@@ -72,3 +72,8 @@ export type Tool = {
 export type Language = {
   language: string;
 };
+
+export type Game = {
+  name: string;
+  year: number;
+};

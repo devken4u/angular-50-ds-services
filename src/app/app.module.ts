@@ -20,6 +20,7 @@ import { VegetableListComponent } from './vegetable-list/vegetable-list.componen
 import { AnimalListComponent } from './animal-list/animal-list.component';
 import { ToolsListComponent } from './tools-list/tools-list.component';
 import { LanguageListComponent } from './language-list/language-list.component';
+import { GameListComponent } from './game-list/game-list.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { LanguageListComponent } from './language-list/language-list.component';
     VegetableListComponent,
     AnimalListComponent,
     ToolsListComponent,
-    LanguageListComponent
+    LanguageListComponent,
+    GameListComponent
   ],
   imports: [
     RouterOutlet,

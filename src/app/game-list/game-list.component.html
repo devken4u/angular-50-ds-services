@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="name">Game Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <label for="year">Release Year: </label>
+    <input type="number" id="year" [(ngModel)]="year" />
+    <br />
+    <button (click)="add()">Add to games</button>
+  </div>
+  <div>
+    <h1>Game list</h1>
+    @if( gameList.length === 0){
+    <h2>-Game list is empty-</h2>
+    }@else{
+    <ol>
+      @for( game of gameList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Game Name: {{ game.name }} <br />
+        Release Year: {{ game.year }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>
