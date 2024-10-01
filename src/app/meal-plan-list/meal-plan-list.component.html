@@ -1,0 +1,20 @@
+<main>
+  <div>
+    <label for="name">Meal Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <button (click)="add()">Add to meal plan</button>
+  </div>
+  <div>
+    <h1>Meal Plan</h1>
+    @if( mealList.length === 0){
+    <h2>-Meal plan is empty-</h2>
+    }@else{
+    <ol>
+      @for( meal of mealList; track $index){
+      <li [style.marginBottom]="'20px'">Meal Name: {{ meal.name }}</li>
+      }
+    </ol>
+    }
+  </div>
+</main>

@@ -193,3 +193,7 @@ export type Exercise = {
   name: string;
   repetitions: number;
 };
+
+export type Meal = {
+  name: string;
+};

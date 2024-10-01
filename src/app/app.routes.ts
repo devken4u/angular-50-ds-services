@@ -40,6 +40,7 @@ import { PaintingListComponent } from './painting-list/painting-list.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import { ComposerListComponent } from './composer-list/composer-list.component';
 import { PodcastListComponent } from './podcast-list/podcast-list.component';
+import { MealPlanListComponent } from './meal-plan-list/meal-plan-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'student-list', pathMatch: 'full' },
@@ -88,4 +89,5 @@ export const routes: Routes = [
   { path: 'composer-list', component: ComposerListComponent },
   { path: 'podcast-list', component: PodcastListComponent },
   { path: 'exercise-list', component: PodcastListComponent },
+  { path: 'exercise-list', component: MealPlanListComponent },
 ];
