@@ -13,6 +13,7 @@ import { CityListComponent } from './city-list/city-list.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { CarModelListComponent } from './car-model-list/car-model-list.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { SubjectListComponent } from './subject-list/subject-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ProductListComponent } from './product-list/product-list.component';
     CityListComponent,
     MovieListComponent,
     CarModelListComponent,
-    ProductListComponent
+    ProductListComponent,
+    SubjectListComponent
   ],
   imports: [
     RouterOutlet,

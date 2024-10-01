@@ -1,0 +1,27 @@
+<main>
+  <div>
+    <label for="name">Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <label for="time">Time: </label>
+    <input type="string" id="time" [(ngModel)]="time" />
+    <br />
+    <button (click)="add()">Add to subjects</button>
+  </div>
+  <div>
+    <h1>Subject list</h1>
+    @if( subjectList.length === 0){
+    <h2>-Subject list is empty-</h2>
+    }@else{
+    <ol>
+      @for( subject of subjectList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Name: {{ subject.name }} <br />
+        Time: {{ subject.time }}
+      </li>
+
+      }
+    </ol>
+    }
+  </div>
+</main>

@@ -42,3 +42,8 @@ export type Product = {
   name: string;
   price: number;
 };
+
+export type Subject = {
+  name: string;
+  time: string;
+};
