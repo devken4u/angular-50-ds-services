@@ -162,3 +162,7 @@ export type Furniture = {
   name: string;
   price: number;
 };
+
+export type PhoneAccessory = {
+  name: string;
+};

@@ -1,0 +1,22 @@
+<main>
+  <div>
+    <label for="name">Phone Accessory Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <button (click)="add()">Add to phone accessory list</button>
+  </div>
+  <div>
+    <h1>Phone Accessory List</h1>
+    @if( accessoryList.length === 0){
+    <h2>-Phone accessory list is empty-</h2>
+    }@else{
+    <ol>
+      @for( accessory of accessoryList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Accessory Name: {{ accessory.name }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>

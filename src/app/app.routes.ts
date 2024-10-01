@@ -34,6 +34,7 @@ import { MobileAppListComponent } from './mobile-app-list/mobile-app-list.compon
 import { VideoListComponent } from './video-list/video-list.component';
 import { TvShowListComponent } from './tv-show-list/tv-show-list.component';
 import { FurnitureListComponent } from './furniture-list/furniture-list.component';
+import { PhoneAccessoryComponent } from './phone-accessory/phone-accessory.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'student-list', pathMatch: 'full' },
@@ -75,4 +76,5 @@ export const routes: Routes = [
   { path: 'video-list', component: VideoListComponent },
   { path: 'tv-show-list', component: TvShowListComponent },
   { path: 'furniture-list', component: FurnitureListComponent },
+  { path: 'phone-accessory-list', component: PhoneAccessoryComponent },
 ];
