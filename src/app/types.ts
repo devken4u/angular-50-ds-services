@@ -224,3 +224,8 @@ export type Framework = {
   name: string;
   version: string;
 };
+
+export type Library = {
+  name: string;
+  version: string;
+};

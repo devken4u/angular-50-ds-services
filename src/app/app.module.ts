@@ -53,6 +53,7 @@ import { TourListComponent } from './tour-list/tour-list.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { DeveloperToolsListComponent } from './developer-tools-list/developer-tools-list.component';
 import { FrameworkListComponent } from './framework-list/framework-list.component';
+import { LibraryListComponent } from './library-list/library-list.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,8 @@ import { FrameworkListComponent } from './framework-list/framework-list.componen
     TourListComponent,
     EventListComponent,
     DeveloperToolsListComponent,
-    FrameworkListComponent
+    FrameworkListComponent,
+    LibraryListComponent,
   ],
   imports: [
     RouterOutlet,

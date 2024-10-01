@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="name">Library Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <label for="version">Version: </label>
+    <input type="text" id="version" [(ngModel)]="version" />
+    <br />
+    <button (click)="add()">Add to library list</button>
+  </div>
+  <div>
+    <h1>Library List</h1>
+    @if( libraryList.length === 0){
+    <h2>-Library list is empty-</h2>
+    }@else{
+    <ol>
+      @for( library of libraryList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Library Name: {{ library.name }} <br />
+        Version: {{ library.version }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>

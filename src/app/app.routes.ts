@@ -48,6 +48,7 @@ import { TourListComponent } from './tour-list/tour-list.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { DeveloperToolsListComponent } from './developer-tools-list/developer-tools-list.component';
 import { FrameworkListComponent } from './framework-list/framework-list.component';
+import { LibraryListComponent } from './library-list/library-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'student-list', pathMatch: 'full' },
@@ -103,4 +104,5 @@ export const routes: Routes = [
   { path: 'event-list', component: EventListComponent },
   { path: 'developer-tools-list', component: DeveloperToolsListComponent },
   { path: 'framework-list', component: FrameworkListComponent },
+  { path: 'libraries-list', component: LibraryListComponent },
 ];
