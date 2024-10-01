@@ -1,0 +1,20 @@
+<main>
+  <div>
+    <label for="name">Sport Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <button (click)="add()">Add to sports</button>
+  </div>
+  <div>
+    <h1>Sports list</h1>
+    @if( sportList.length === 0){
+    <h2>-Sports list is empty-</h2>
+    }@else{
+    <ol>
+      @for( sport of sportList; track $index){
+      <li [style.marginBottom]="'20px'">Sport Name: {{ sport.name }}</li>
+      }
+    </ol>
+    }
+  </div>
+</main>

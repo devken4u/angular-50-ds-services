@@ -51,3 +51,7 @@ export type Subject = {
 export type Country = {
   name: string;
 };
+
+export type Sport = {
+  name: string;
+};

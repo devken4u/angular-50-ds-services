@@ -15,6 +15,7 @@ import { CarModelListComponent } from './car-model-list/car-model-list.component
 import { ProductListComponent } from './product-list/product-list.component';
 import { SubjectListComponent } from './subject-list/subject-list.component';
 import { CountryListComponent } from './country-list/country-list.component';
+import { SportsListComponent } from './sports-list/sports-list.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CountryListComponent } from './country-list/country-list.component';
     CarModelListComponent,
     ProductListComponent,
     SubjectListComponent,
-    CountryListComponent
+    CountryListComponent,
+    SportsListComponent
   ],
   imports: [
     RouterOutlet,
