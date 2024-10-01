@@ -38,6 +38,7 @@ import { PhoneAccessoryComponent } from './phone-accessory/phone-accessory.compo
 import { BuildingListComponent } from './building-list/building-list.component';
 import { PaintingListComponent } from './painting-list/painting-list.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
+import { ComposerListComponent } from './composer-list/composer-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'student-list', pathMatch: 'full' },
@@ -83,4 +84,5 @@ export const routes: Routes = [
   { path: 'building-list', component: BuildingListComponent },
   { path: 'painting-list', component: PaintingListComponent },
   { path: 'artist-list', component: ArtistListComponent },
+  { path: 'composer-list', component: ComposerListComponent },
 ];

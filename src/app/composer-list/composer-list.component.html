@@ -1,0 +1,20 @@
+<main>
+  <div>
+    <label for="name">Composer Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <button (click)="add()">Add to composer list</button>
+  </div>
+  <div>
+    <h1>Composer List</h1>
+    @if( composerList.length === 0){
+    <h2>-Composer list is empty-</h2>
+    }@else{
+    <ol>
+      @for( composer of composerList; track $index){
+      <li [style.marginBottom]="'20px'">Composer Name: {{ composer.name }}</li>
+      }
+    </ol>
+    }
+  </div>
+</main>

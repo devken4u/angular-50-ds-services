@@ -43,6 +43,7 @@ import { PhoneAccessoryComponent } from './phone-accessory/phone-accessory.compo
 import { BuildingListComponent } from './building-list/building-list.component';
 import { PaintingListComponent } from './painting-list/painting-list.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
+import { ComposerListComponent } from './composer-list/composer-list.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { ArtistListComponent } from './artist-list/artist-list.component';
     PhoneAccessoryComponent,
     BuildingListComponent,
     PaintingListComponent,
-    ArtistListComponent
+    ArtistListComponent,
+    ComposerListComponent
   ],
   imports: [
     RouterOutlet,

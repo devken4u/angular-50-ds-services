@@ -179,3 +179,7 @@ export type Painting = {
 export type Artist = {
   name: string;
 };
+
+export type Composer = {
+  name: string;
+};
