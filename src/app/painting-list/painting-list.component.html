@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="title">Painting Title: </label>
+    <input type="text" id="title" [(ngModel)]="title" />
+    <br />
+    <label for="year">Year: </label>
+    <input type="number" id="year" [(ngModel)]="year" />
+    <br />
+    <button (click)="add()">Add to painting list</button>
+  </div>
+  <div>
+    <h1>Painting List</h1>
+    @if( paintingList.length === 0){
+    <h2>-Painting list is empty-</h2>
+    }@else{
+    <ol>
+      @for( painting of paintingList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Painting Title: {{ painting.title }} <br />
+        Year: {{ painting.year }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>

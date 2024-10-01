@@ -170,3 +170,8 @@ export type PhoneAccessory = {
 export type Building = {
   name: string;
 };
+
+export type Painting = {
+  title: string;
+  year: number;
+};
