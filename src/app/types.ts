@@ -147,3 +147,8 @@ export type MobileApp = {
   name: string;
   platform: string;
 };
+
+export type Video = {
+  title: string;
+  views: number;
+};
