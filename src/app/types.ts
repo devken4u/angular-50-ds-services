@@ -91,3 +91,8 @@ export type Music = {
   title: string;
   artist: string;
 };
+
+export type Food = {
+  name: string;
+  price: number;
+};

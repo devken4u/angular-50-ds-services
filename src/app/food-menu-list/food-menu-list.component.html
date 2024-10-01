@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="name">Food Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <label for="price">Price: </label>
+    <input type="number" id="price" [(ngModel)]="price" />
+    <br />
+    <button (click)="add()">Add to menu</button>
+  </div>
+  <div>
+    <h1>Food Menu</h1>
+    @if( foodList.length === 0){
+    <h2>-Food menu is empty-</h2>
+    }@else{
+    <ol>
+      @for( food of foodList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Food Name: {{ food.name }} <br />
+        Price: {{ food.price }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>
