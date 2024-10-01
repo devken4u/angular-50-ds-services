@@ -10,6 +10,7 @@ import { FruitListComponent } from './fruit-list/fruit-list.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { CityListComponent } from './city-list/city-list.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CityListComponent } from './city-list/city-list.component';
     FruitListComponent,
     CourseListComponent,
     BookListComponent,
-    CityListComponent
+    CityListComponent,
+    MovieListComponent
   ],
   imports: [
     RouterOutlet,

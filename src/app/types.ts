@@ -26,4 +26,9 @@ export type Book = {
 
 export type City = {
   city: string;
-}
+};
+
+export type Movie = {
+  name: string;
+  rating: number;
+};

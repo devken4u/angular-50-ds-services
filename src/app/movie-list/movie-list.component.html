@@ -1,0 +1,27 @@
+<main>
+  <div>
+    <label for="name">Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <label for="rating">Rating: </label>
+    <input type="number" id="rating" [(ngModel)]="rating" />
+    <br />
+    <button (click)="add()">Add to movies</button>
+  </div>
+  <div>
+    <h1>Movie list</h1>
+    @if( movieList.length === 0){
+    <h2>-City list is empty-</h2>
+    }@else{
+    <ol>
+      @for( movie of movieList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Name: {{ movie.name }} <br />
+        Rating: {{ movie.rating }}
+      </li>
+
+      }
+    </ol>
+    }
+  </div>
+</main>
