@@ -11,6 +11,7 @@ import { CourseListComponent } from './course-list/course-list.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { CityListComponent } from './city-list/city-list.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
+import { CarModelListComponent } from './car-model-list/car-model-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MovieListComponent } from './movie-list/movie-list.component';
     CourseListComponent,
     BookListComponent,
     CityListComponent,
-    MovieListComponent
+    MovieListComponent,
+    CarModelListComponent
   ],
   imports: [
     RouterOutlet,

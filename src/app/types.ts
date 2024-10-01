@@ -32,3 +32,8 @@ export type Movie = {
   name: string;
   rating: number;
 };
+
+export type CarModel = {
+  name: string;
+  year: number;
+};
