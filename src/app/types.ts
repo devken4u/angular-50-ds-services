@@ -129,3 +129,8 @@ export type Destination = {
   place: string;
   country: string;
 };
+
+export type Laptop = {
+  model: string;
+  price: number;
+};

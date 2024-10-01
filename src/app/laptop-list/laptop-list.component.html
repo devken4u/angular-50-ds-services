@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="model">Laptop Model: </label>
+    <input type="text" id="model" [(ngModel)]="model" />
+    <br />
+    <label for="price">Price: </label>
+    <input type="number" id="price" [(ngModel)]="price" />
+    <br />
+    <button (click)="add()">Add to laptop list</button>
+  </div>
+  <div>
+    <h1>Laptop List</h1>
+    @if( laptopList.length === 0){
+    <h2>-Laptop list is empty-</h2>
+    }@else{
+    <ol>
+      @for( laptop of laptopList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Laptop Model: {{ laptop.model }} <br />
+        Price: {{ laptop.price }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>
