@@ -13,6 +13,7 @@ import { CountryListComponent } from './country-list/country-list.component';
 import { SportsListComponent } from './sports-list/sports-list.component';
 import { VegetableListComponent } from './vegetable-list/vegetable-list.component';
 import { AnimalListComponent } from './animal-list/animal-list.component';
+import { ToolsListComponent } from './tools-list/tools-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'student-list', pathMatch: 'full' },
@@ -30,4 +31,5 @@ export const routes: Routes = [
   { path: 'sports-list', component: SportsListComponent },
   { path: 'vegetable-list', component: VegetableListComponent },
   { path: 'animal-list', component: AnimalListComponent },
+  { path: 'tools-list', component: ToolsListComponent },
 ];

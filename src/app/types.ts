@@ -63,3 +63,8 @@ export type Vegetable = {
 export type Animal = {
   name: string;
 };
+
+export type Tool = {
+  name: string;
+  price: number;
+};

@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="name">Tool Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <label for="price">Price: </label>
+    <input type="number" id="price" [(ngModel)]="price" />
+    <br />
+    <button (click)="add()">Add to tools</button>
+  </div>
+  <div>
+    <h1>Tools list</h1>
+    @if( toolList.length === 0){
+    <h2>-Tools list is empty-</h2>
+    }@else{
+    <ol>
+      @for( tool of toolList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Tool Name: {{ tool.name }} <br />
+        Price: {{ tool.price }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>

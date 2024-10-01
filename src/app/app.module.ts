@@ -18,6 +18,7 @@ import { CountryListComponent } from './country-list/country-list.component';
 import { SportsListComponent } from './sports-list/sports-list.component';
 import { VegetableListComponent } from './vegetable-list/vegetable-list.component';
 import { AnimalListComponent } from './animal-list/animal-list.component';
+import { ToolsListComponent } from './tools-list/tools-list.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AnimalListComponent } from './animal-list/animal-list.component';
     CountryListComponent,
     SportsListComponent,
     VegetableListComponent,
-    AnimalListComponent
+    AnimalListComponent,
+    ToolsListComponent
   ],
   imports: [
     RouterOutlet,
