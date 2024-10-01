@@ -96,3 +96,8 @@ export type Food = {
   name: string;
   price: number;
 };
+
+export type Grocery = {
+  name: string;
+  price: number;
+};
