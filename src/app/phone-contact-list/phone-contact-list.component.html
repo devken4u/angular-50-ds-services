@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="name">Contact Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <label for="phoneNumber">Phone Number: </label>
+    <input type="tel" id="phoneNumber" [(ngModel)]="phoneNumber" />
+    <br />
+    <button (click)="add()">Add to contacts</button>
+  </div>
+  <div>
+    <h1>Contact list</h1>
+    @if( contactList.length === 0){
+    <h2>-Contact list is empty-</h2>
+    }@else{
+    <ol>
+      @for( contact of contactList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Contact Name: {{ contact.name }} <br />
+        Phone Number: {{ contact.phoneNumber }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>

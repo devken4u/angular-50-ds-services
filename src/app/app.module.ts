@@ -22,6 +22,7 @@ import { ToolsListComponent } from './tools-list/tools-list.component';
 import { LanguageListComponent } from './language-list/language-list.component';
 import { GameListComponent } from './game-list/game-list.component';
 import { SoftwareListComponent } from './software-list/software-list.component';
+import { PhoneContactListComponent } from './phone-contact-list/phone-contact-list.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SoftwareListComponent } from './software-list/software-list.component';
     ToolsListComponent,
     LanguageListComponent,
     GameListComponent,
-    SoftwareListComponent
+    SoftwareListComponent,
+    PhoneContactListComponent
   ],
   imports: [
     RouterOutlet,

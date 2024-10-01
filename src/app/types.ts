@@ -81,3 +81,8 @@ export type Game = {
 export type Software = {
   name: string;
 };
+
+export type Contact = {
+  name: string;
+  phoneNumber: string;
+};
