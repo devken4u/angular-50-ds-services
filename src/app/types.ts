@@ -55,3 +55,7 @@ export type Country = {
 export type Sport = {
   name: string;
 };
+
+export type Vegetable = {
+  name: string;
+};

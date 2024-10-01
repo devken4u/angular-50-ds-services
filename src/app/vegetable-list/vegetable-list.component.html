@@ -1,0 +1,22 @@
+<main>
+  <div>
+    <label for="name">Vegetable Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <button (click)="add()">Add to vegetables</button>
+  </div>
+  <div>
+    <h1>Vegetable list</h1>
+    @if( vegetableList.length === 0){
+    <h2>-Vegetable list is empty-</h2>
+    }@else{
+    <ol>
+      @for( vegetable of vegetableList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Vegetable Name: {{ vegetable.name }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>

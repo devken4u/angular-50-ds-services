@@ -11,6 +11,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { SubjectListComponent } from './subject-list/subject-list.component';
 import { CountryListComponent } from './country-list/country-list.component';
 import { SportsListComponent } from './sports-list/sports-list.component';
+import { VegetableListComponent } from './vegetable-list/vegetable-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'student-list', pathMatch: 'full' },
@@ -26,4 +27,5 @@ export const routes: Routes = [
   { path: 'subject-list', component: SubjectListComponent },
   { path: 'country-list', component: CountryListComponent },
   { path: 'sports-list', component: SportsListComponent },
+  { path: 'vegetable-list', component: VegetableListComponent },
 ];
