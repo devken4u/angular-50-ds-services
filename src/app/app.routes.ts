@@ -28,6 +28,7 @@ import { StationeryListComponent } from './stationery-list/stationery-list.compo
 import { FlowerListComponent } from './flower-list/flower-list.component';
 import { DestionationListComponent } from './destionation-list/destionation-list.component';
 import { LaptopListComponent } from './laptop-list/laptop-list.component';
+import { LaptopSpecificationListComponent } from './laptop-specification-list/laptop-specification-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'student-list', pathMatch: 'full' },
@@ -60,4 +61,5 @@ export const routes: Routes = [
   { path: 'flower-list', component: FlowerListComponent },
   { path: 'destination-list', component: DestionationListComponent },
   { path: 'laptop-list', component: LaptopListComponent },
+  { path: 'laptop-specification-list', component: LaptopSpecificationListComponent },
 ];

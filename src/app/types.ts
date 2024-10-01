@@ -134,3 +134,7 @@ export type Laptop = {
   model: string;
   price: number;
 };
+
+export type LaptopSpecification = {
+  specs: string;
+};

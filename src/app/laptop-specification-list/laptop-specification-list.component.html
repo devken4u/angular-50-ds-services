@@ -1,0 +1,22 @@
+<main>
+  <div>
+    <label for="specs">Laptop Specifications: </label>
+    <input type="text" id="specs" [(ngModel)]="specs" />
+    <br />
+    <button (click)="add()">Add to laptop specifications</button>
+  </div>
+  <div>
+    <h1>Laptop Specifications List</h1>
+    @if( specificationList.length === 0){
+    <h2>-Specification list is empty-</h2>
+    }@else{
+    <ol>
+      @for( specification of specificationList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Specifications: {{ specification.specs }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>
