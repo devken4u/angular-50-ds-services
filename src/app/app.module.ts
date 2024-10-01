@@ -21,6 +21,7 @@ import { AnimalListComponent } from './animal-list/animal-list.component';
 import { ToolsListComponent } from './tools-list/tools-list.component';
 import { LanguageListComponent } from './language-list/language-list.component';
 import { GameListComponent } from './game-list/game-list.component';
+import { SoftwareListComponent } from './software-list/software-list.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { GameListComponent } from './game-list/game-list.component';
     AnimalListComponent,
     ToolsListComponent,
     LanguageListComponent,
-    GameListComponent
+    GameListComponent,
+    SoftwareListComponent
   ],
   imports: [
     RouterOutlet,

@@ -16,6 +16,7 @@ import { AnimalListComponent } from './animal-list/animal-list.component';
 import { ToolsListComponent } from './tools-list/tools-list.component';
 import { LanguageListComponent } from './language-list/language-list.component';
 import { GameListComponent } from './game-list/game-list.component';
+import { SoftwareListComponent } from './software-list/software-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'student-list', pathMatch: 'full' },
@@ -36,4 +37,5 @@ export const routes: Routes = [
   { path: 'tools-list', component: ToolsListComponent },
   { path: 'language-list', component: LanguageListComponent },
   { path: 'game-list', component: GameListComponent },
+  { path: 'software-list', component: SoftwareListComponent },
 ];

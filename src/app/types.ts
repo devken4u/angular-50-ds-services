@@ -77,3 +77,7 @@ export type Game = {
   name: string;
   year: number;
 };
+
+export type Software = {
+  name: string;
+};
