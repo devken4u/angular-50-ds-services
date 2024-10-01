@@ -17,6 +17,7 @@ import { SubjectListComponent } from './subject-list/subject-list.component';
 import { CountryListComponent } from './country-list/country-list.component';
 import { SportsListComponent } from './sports-list/sports-list.component';
 import { VegetableListComponent } from './vegetable-list/vegetable-list.component';
+import { AnimalListComponent } from './animal-list/animal-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { VegetableListComponent } from './vegetable-list/vegetable-list.componen
     SubjectListComponent,
     CountryListComponent,
     SportsListComponent,
-    VegetableListComponent
+    VegetableListComponent,
+    AnimalListComponent
   ],
   imports: [
     RouterOutlet,

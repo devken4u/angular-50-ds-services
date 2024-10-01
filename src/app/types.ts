@@ -59,3 +59,7 @@ export type Sport = {
 export type Vegetable = {
   name: string;
 };
+
+export type Animal = {
+  name: string;
+};
