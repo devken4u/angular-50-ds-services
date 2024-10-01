@@ -175,3 +175,7 @@ export type Painting = {
   title: string;
   year: number;
 };
+
+export type Artist = {
+  name: string;
+};

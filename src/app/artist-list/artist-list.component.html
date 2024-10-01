@@ -1,0 +1,20 @@
+<main>
+  <div>
+    <label for="name">Artist Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <button (click)="add()">Add to artist list</button>
+  </div>
+  <div>
+    <h1>Artist List</h1>
+    @if( artistList.length === 0){
+    <h2>-Artist list is empty-</h2>
+    }@else{
+    <ol>
+      @for( artist of artistList; track $index){
+      <li [style.marginBottom]="'20px'">Artist Name: {{ artist.name }}</li>
+      }
+    </ol>
+    }
+  </div>
+</main>
