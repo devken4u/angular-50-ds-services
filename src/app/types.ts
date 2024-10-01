@@ -111,3 +111,8 @@ export type Inventory = {
   name: string;
   quantity: number;
 };
+
+export type Lecture = {
+  name: string;
+  course: string;
+};

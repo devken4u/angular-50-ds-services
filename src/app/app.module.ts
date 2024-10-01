@@ -28,6 +28,7 @@ import { FoodMenuListComponent } from './food-menu-list/food-menu-list.component
 import { GroceryListComponent } from './grocery-list/grocery-list.component';
 import { ClassroomListComponent } from './classroom-list/classroom-list.component';
 import { InventoryListComponent } from './inventory-list/inventory-list.component';
+import { LectureListComponent } from './lecture-list/lecture-list.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { InventoryListComponent } from './inventory-list/inventory-list.componen
     FoodMenuListComponent,
     GroceryListComponent,
     ClassroomListComponent,
-    InventoryListComponent
+    InventoryListComponent,
+    LectureListComponent
   ],
   imports: [
     RouterOutlet,

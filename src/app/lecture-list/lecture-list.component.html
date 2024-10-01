@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="name">Lecture Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <label for="course">Course: </label>
+    <input type="text" id="course" [(ngModel)]="course" />
+    <br />
+    <button (click)="add()">Add to lectures</button>
+  </div>
+  <div>
+    <h1>Lecture list</h1>
+    @if( lectureList.length === 0){
+    <h2>-Lecture list is empty-</h2>
+    }@else{
+    <ol>
+      @for( lecture of lectureList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Lecture Name: {{ lecture.name }} <br />
+        Course: {{ lecture.course }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>
