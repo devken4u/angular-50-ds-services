@@ -47,3 +47,7 @@ export type Subject = {
   name: string;
   time: string;
 };
+
+export type Country = {
+  name: string;
+};

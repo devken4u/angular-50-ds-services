@@ -3,6 +3,7 @@ import { Subject } from '../types';
 
 @Component({
   selector: 'app-subject-list',
+
   templateUrl: './subject-list.component.html',
   styleUrl: './subject-list.component.css',
 })
