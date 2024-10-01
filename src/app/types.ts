@@ -215,3 +215,7 @@ export type Tour = {
 export type Event = {
   eventName: string;
 };
+
+export type DeveloperTool = {
+  name: string;
+};
