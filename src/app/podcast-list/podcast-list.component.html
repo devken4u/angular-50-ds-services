@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="title">Podcast Title: </label>
+    <input type="text" id="title" [(ngModel)]="title" />
+    <br />
+    <label for="speaker">Speaker: </label>
+    <input type="text" id="speaker" [(ngModel)]="speaker" />
+    <br />
+    <button (click)="add()">Add to podcast list</button>
+  </div>
+  <div>
+    <h1>Podcast List</h1>
+    @if( podcastList.length === 0){
+    <h2>-Podcast list is empty-</h2>
+    }@else{
+    <ol>
+      @for( podcast of podcastList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Podcast Title: {{ podcast.title }} <br />
+        Speaker: {{ podcast.speaker }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>

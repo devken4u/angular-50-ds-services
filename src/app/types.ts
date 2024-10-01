@@ -183,3 +183,8 @@ export type Artist = {
 export type Composer = {
   name: string;
 };
+
+export type Podcast = {
+  title: string;
+  speaker: string;
+};
