@@ -138,3 +138,7 @@ export type Laptop = {
 export type LaptopSpecification = {
   specs: string;
 };
+
+export type ComputerHardware = {
+  name: string;
+};

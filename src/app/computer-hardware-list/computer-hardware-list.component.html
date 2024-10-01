@@ -1,0 +1,20 @@
+<main>
+  <div>
+    <label for="name">Computer Hardware Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <button (click)="add()">Add to hardware list</button>
+  </div>
+  <div>
+    <h1>Computer Hardware List</h1>
+    @if( hardwareList.length === 0){
+    <h2>-Hardware list is empty-</h2>
+    }@else{
+    <ol>
+      @for( hardware of hardwareList; track $index){
+      <li [style.marginBottom]="'20px'">Hardware Name: {{ hardware.name }}</li>
+      }
+    </ol>
+    }
+  </div>
+</main>

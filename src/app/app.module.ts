@@ -34,6 +34,7 @@ import { FlowerListComponent } from './flower-list/flower-list.component';
 import { DestionationListComponent } from './destionation-list/destionation-list.component';
 import { LaptopListComponent } from './laptop-list/laptop-list.component';
 import { LaptopSpecificationListComponent } from './laptop-specification-list/laptop-specification-list.component';
+import { ComputerHardwareListComponent } from './computer-hardware-list/computer-hardware-list.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { LaptopSpecificationListComponent } from './laptop-specification-list/la
     FlowerListComponent,
     DestionationListComponent,
     LaptopListComponent,
-    LaptopSpecificationListComponent
+    LaptopSpecificationListComponent,
+    ComputerHardwareListComponent
   ],
   imports: [
     RouterOutlet,
