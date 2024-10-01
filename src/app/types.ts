@@ -116,3 +116,7 @@ export type Lecture = {
   name: string;
   course: string;
 };
+
+export type Stationery = {
+  name: string;
+};

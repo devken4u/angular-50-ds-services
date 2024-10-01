@@ -1,0 +1,22 @@
+<main>
+  <div>
+    <label for="name">Stationery Item: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <button (click)="add()">Add to stationery list</button>
+  </div>
+  <div>
+    <h1>Stationery list</h1>
+    @if( stationeryList.length === 0){
+    <h2>-Stationery list is empty-</h2>
+    }@else{
+    <ol>
+      @for( stationery of stationeryList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Stationery Item: {{ stationery.name }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>
