@@ -197,3 +197,8 @@ export type Exercise = {
 export type Meal = {
   name: string;
 };
+
+export type Budget = {
+  projectName: string;
+  budget: number;
+};

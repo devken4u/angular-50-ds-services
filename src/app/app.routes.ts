@@ -41,6 +41,8 @@ import { ArtistListComponent } from './artist-list/artist-list.component';
 import { ComposerListComponent } from './composer-list/composer-list.component';
 import { PodcastListComponent } from './podcast-list/podcast-list.component';
 import { MealPlanListComponent } from './meal-plan-list/meal-plan-list.component';
+import { BudgetListComponent } from './budget-list/budget-list.component';
+import { ExerciseListComponent } from './exercise-list/exercise-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'student-list', pathMatch: 'full' },
@@ -88,6 +90,7 @@ export const routes: Routes = [
   { path: 'artist-list', component: ArtistListComponent },
   { path: 'composer-list', component: ComposerListComponent },
   { path: 'podcast-list', component: PodcastListComponent },
-  { path: 'exercise-list', component: PodcastListComponent },
-  { path: 'exercise-list', component: MealPlanListComponent },
+  { path: 'exercise-list', component: ExerciseListComponent },
+  { path: 'meal-plan-list', component: MealPlanListComponent },
+  { path: 'budget-list', component: BudgetListComponent },
 ];

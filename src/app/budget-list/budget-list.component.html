@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="projectName">Project Name: </label>
+    <input type="text" id="projectName" [(ngModel)]="projectName" />
+    <br />
+    <label for="budget">Budget: </label>
+    <input type="number" id="budget" [(ngModel)]="budget" />
+    <br />
+    <button (click)="add()">Add to budget list</button>
+  </div>
+  <div>
+    <h1>Budget List</h1>
+    @if( budgetList.length === 0){
+    <h2>-Budget list is empty-</h2>
+    }@else{
+    <ol>
+      @for( budgetItem of budgetList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Project Name: {{ budgetItem.projectName }} <br />
+        Budget: {{ budgetItem.budget }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>
