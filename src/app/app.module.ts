@@ -35,6 +35,7 @@ import { DestionationListComponent } from './destionation-list/destionation-list
 import { LaptopListComponent } from './laptop-list/laptop-list.component';
 import { LaptopSpecificationListComponent } from './laptop-specification-list/laptop-specification-list.component';
 import { ComputerHardwareListComponent } from './computer-hardware-list/computer-hardware-list.component';
+import { MobileAppListComponent } from './mobile-app-list/mobile-app-list.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { ComputerHardwareListComponent } from './computer-hardware-list/computer
     DestionationListComponent,
     LaptopListComponent,
     LaptopSpecificationListComponent,
-    ComputerHardwareListComponent
+    ComputerHardwareListComponent,
+    MobileAppListComponent
   ],
   imports: [
     RouterOutlet,

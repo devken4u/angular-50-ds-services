@@ -142,3 +142,8 @@ export type LaptopSpecification = {
 export type ComputerHardware = {
   name: string;
 };
+
+export type MobileApp = {
+  name: string;
+  platform: string;
+};

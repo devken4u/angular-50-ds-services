@@ -30,6 +30,7 @@ import { DestionationListComponent } from './destionation-list/destionation-list
 import { LaptopListComponent } from './laptop-list/laptop-list.component';
 import { LaptopSpecificationListComponent } from './laptop-specification-list/laptop-specification-list.component';
 import { ComputerHardwareListComponent } from './computer-hardware-list/computer-hardware-list.component';
+import { MobileAppListComponent } from './mobile-app-list/mobile-app-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'student-list', pathMatch: 'full' },
@@ -67,4 +68,5 @@ export const routes: Routes = [
     component: LaptopSpecificationListComponent,
   },
   { path: 'computer-hardware-list', component: ComputerHardwareListComponent },
+  { path: 'mobile-app-list', component: MobileAppListComponent },
 ];

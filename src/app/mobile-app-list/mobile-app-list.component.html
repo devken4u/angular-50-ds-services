@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="name">App Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <label for="platform">Platform: </label>
+    <input type="text" id="platform" [(ngModel)]="platform" />
+    <br />
+    <button (click)="add()">Add to mobile apps</button>
+  </div>
+  <div>
+    <h1>Mobile App List</h1>
+    @if( appList.length === 0){
+    <h2>-Mobile app list is empty-</h2>
+    }@else{
+    <ol>
+      @for( app of appList; track $index){
+      <li [style.marginBottom]="'20px'">
+        App Name: {{ app.name }} <br />
+        Platform: {{ app.platform }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>
