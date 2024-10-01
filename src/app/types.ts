@@ -68,3 +68,7 @@ export type Tool = {
   name: string;
   price: number;
 };
+
+export type Language = {
+  language: string;
+};

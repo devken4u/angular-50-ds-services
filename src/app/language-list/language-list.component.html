@@ -1,0 +1,20 @@
+<main>
+  <div>
+    <label for="language">Language: </label>
+    <input type="text" id="language" [(ngModel)]="language" />
+    <br />
+    <button (click)="add()">Add to languages</button>
+  </div>
+  <div>
+    <h1>Language list</h1>
+    @if( languageList.length === 0){
+    <h2>-Language list is empty-</h2>
+    }@else{
+    <ol>
+      @for( language of languageList; track $index){
+      <li [style.marginBottom]="'20px'">Language: {{ language.language }}</li>
+      }
+    </ol>
+    }
+  </div>
+</main>
