@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="name">Student Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <label for="roomNumber">Room Number: </label>
+    <input type="number" id="roomNumber" [(ngModel)]="roomNumber" />
+    <br />
+    <button (click)="add()">Add to student list</button>
+  </div>
+  <div>
+    <h1>Student list</h1>
+    @if( studentList.length === 0){
+    <h2>-Student list is empty-</h2>
+    }@else{
+    <ol>
+      @for( student of studentList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Student Name: {{ student.name }} <br />
+        Room Number: {{ student.roomNumber }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>

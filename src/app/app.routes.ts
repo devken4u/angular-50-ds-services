@@ -21,6 +21,7 @@ import { PhoneContactListComponent } from './phone-contact-list/phone-contact-li
 import { MusicListComponent } from './music-list/music-list.component';
 import { FoodMenuListComponent } from './food-menu-list/food-menu-list.component';
 import { GroceryListComponent } from './grocery-list/grocery-list.component';
+import { ClassroomListComponent } from './classroom-list/classroom-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'student-list', pathMatch: 'full' },
@@ -46,4 +47,5 @@ export const routes: Routes = [
   { path: 'music-list', component: MusicListComponent },
   { path: 'food-menu-list', component: FoodMenuListComponent },
   { path: 'grocery-list', component: GroceryListComponent },
+  { path: 'classroom-list', component: ClassroomListComponent },
 ];

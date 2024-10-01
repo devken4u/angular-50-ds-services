@@ -101,3 +101,8 @@ export type Grocery = {
   name: string;
   price: number;
 };
+
+export type Classroom = {
+  name: string;
+  roomNumber: number;
+};
