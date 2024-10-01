@@ -219,3 +219,8 @@ export type Event = {
 export type DeveloperTool = {
   name: string;
 };
+
+export type Framework = {
+  name: string;
+  version: string;
+};

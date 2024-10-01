@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <label for="name">Framework Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <label for="version">Version: </label>
+    <input type="text" id="version" [(ngModel)]="version" />
+    <br />
+    <button (click)="add()">Add to framework list</button>
+  </div>
+  <div>
+    <h1>Framework List</h1>
+    @if( frameworkList.length === 0){
+    <h2>-Framework list is empty-</h2>
+    }@else{
+    <ol>
+      @for( framework of frameworkList; track $index){
+      <li [style.marginBottom]="'20px'">
+        Framework Name: {{ framework.name }} <br />
+        Version: {{ framework.version }}
+      </li>
+      }
+    </ol>
+    }
+  </div>
+</main>
