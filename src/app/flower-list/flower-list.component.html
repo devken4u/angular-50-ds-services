@@ -1,0 +1,20 @@
+<main>
+  <div>
+    <label for="name">Flower Name: </label>
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <button (click)="add()">Add to flower list</button>
+  </div>
+  <div>
+    <h1>Flower list</h1>
+    @if( flowerList.length === 0){
+    <h2>-Flower list is empty-</h2>
+    }@else{
+    <ol>
+      @for( flower of flowerList; track $index){
+      <li [style.marginBottom]="'20px'">Flower Name: {{ flower.name }}</li>
+      }
+    </ol>
+    }
+  </div>
+</main>

@@ -120,3 +120,7 @@ export type Lecture = {
 export type Stationery = {
   name: string;
 };
+
+export type Flower = {
+  name: string;
+};

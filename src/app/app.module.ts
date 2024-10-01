@@ -30,6 +30,7 @@ import { ClassroomListComponent } from './classroom-list/classroom-list.componen
 import { InventoryListComponent } from './inventory-list/inventory-list.component';
 import { LectureListComponent } from './lecture-list/lecture-list.component';
 import { StationeryListComponent } from './stationery-list/stationery-list.component';
+import { FlowerListComponent } from './flower-list/flower-list.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { StationeryListComponent } from './stationery-list/stationery-list.compo
     ClassroomListComponent,
     InventoryListComponent,
     LectureListComponent,
-    StationeryListComponent
+    StationeryListComponent,
+    FlowerListComponent
   ],
   imports: [
     RouterOutlet,
