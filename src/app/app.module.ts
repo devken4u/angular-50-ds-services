@@ -38,6 +38,7 @@ import { ComputerHardwareListComponent } from './computer-hardware-list/computer
 import { MobileAppListComponent } from './mobile-app-list/mobile-app-list.component';
 import { VideoListComponent } from './video-list/video-list.component';
 import { TvShowListComponent } from './tv-show-list/tv-show-list.component';
+import { FurnitureListComponent } from './furniture-list/furniture-list.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { TvShowListComponent } from './tv-show-list/tv-show-list.component';
     ComputerHardwareListComponent,
     MobileAppListComponent,
     VideoListComponent,
-    TvShowListComponent
+    TvShowListComponent,
+    FurnitureListComponent
   ],
   imports: [
     RouterOutlet,

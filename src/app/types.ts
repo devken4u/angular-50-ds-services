@@ -157,3 +157,8 @@ export type TVShow = {
   title: string;
   time: string;
 };
+
+export type Furniture = {
+  name: string;
+  price: number;
+};
