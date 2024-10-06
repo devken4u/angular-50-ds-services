@@ -11,9 +11,6 @@ import { Student } from '../types';
 export class StudentListComponent implements OnInit {
   studentList: Student[] = [];
 
-  toEditStudentValue: Student | {} = {};
-  isEditStudentOpen: boolean = false;
-
   name: string = '';
   year: string = '';
   section: string = '';

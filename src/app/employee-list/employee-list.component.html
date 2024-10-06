@@ -1,27 +1,64 @@
 <main>
   <div>
     <label for="name">Name: </label>
+    <br />
     <input type="text" id="name" [(ngModel)]="name" />
     <br />
     <label for="work">Work: </label>
-    <input type="string" id="work" [(ngModel)]="work" />
     <br />
-    <button (click)="add()">Add to employee</button>
+    <input type="text" id="work" [(ngModel)]="work" />
+    <br />
+    <button
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
+      (click)="add()"
+      [disabled]="!name || !work"
+    >
+      Add Employee
+    </button>
   </div>
-  <div>
-    <h1>Employee list</h1>
-    @if(employeeList.length === 0){
-    <h2>-Employee list is empty-</h2>
-    }@else{
-    <ol>
-      @for(employee of employeeList; track $index){
-      <li [style.marginBottom]="'20px'">
-        Name: {{ employee.name }}
-        <br />
-        Year: {{ employee.work }}
-      </li>
+  <table class="border-2 border-black">
+    <thead>
+      <tr>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">Name</th>
+        <th class="px-4 border-2 border-black">Work</th>
+        <th class="px-4 border-2 border-black">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (employee of employeeList; track $index) {
+      <tr>
+        <td class="border-2 border-black">{{ $index + 1 }}</td>
+        <td class="border-2 border-black">
+          {{ employee.name }}
+          <button
+            (click)="editField($index, 'name', employee.name)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          {{ employee.work }}
+          <button
+            (click)="editField($index, 'work', employee.work)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          <div class="py-2">
+            <button
+              (click)="deleteEmployee($index)"
+              class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
       }
-    </ol>
-    }
-  </div>
+    </tbody>
+  </table>
 </main>

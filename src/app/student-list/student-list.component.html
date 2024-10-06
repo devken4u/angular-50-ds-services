@@ -13,7 +13,7 @@
     <input type="text" id="section" [(ngModel)]="section" />
     <br />
     <button
-      class="bg-blue-500 text-white font-bold rounded-md p-2 my-2 active:scale-95"
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
       (click)="add()"
     >
       Add to student
@@ -22,11 +22,11 @@
   <table class="border-2 border-black">
     <thead>
       <tr>
-        <th class="border-2 border-black px-4">No.</th>
-        <th class="border-2 border-black px-4">Name</th>
-        <th class="border-2 border-black px-4">Year</th>
-        <th class="border-2 border-black px-4">Section</th>
-        <th class="border-2 border-black px-4">Action</th>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">Name</th>
+        <th class="px-4 border-2 border-black">Year</th>
+        <th class="px-4 border-2 border-black">Section</th>
+        <th class="px-4 border-2 border-black">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -37,7 +37,7 @@
           {{ student.name }}
           <button
             (click)="editField($index, 'name', student.name)"
-            class="bg-gray-300 mx-2 font-bold rounded-md border border-black active:scale-95"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
           >
             🖋
           </button>
@@ -46,7 +46,7 @@
           {{ student.year }}
           <button
             (click)="editField($index, 'year', student.year)"
-            class="bg-gray-300 mx-2 font-bold rounded-md border border-black active:scale-95"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
           >
             🖋
           </button>
@@ -55,7 +55,7 @@
           {{ student.section }}
           <button
             (click)="editField($index, 'section', student.section)"
-            class="bg-gray-300 mx-2 font-bold rounded-md border border-black active:scale-95"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
           >
             🖋
           </button>
@@ -64,7 +64,7 @@
           <div class="py-2">
             <button
               (click)="deleteStudent($index)"
-              class="bg-gray-300 mx-2 px-2 font-bold rounded-md border border-black active:scale-95"
+              class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
             >
               Delete
             </button>
