@@ -1,32 +1,78 @@
 <main>
   <div>
     <label for="name">Name: </label>
+    <br />
     <input type="text" id="name" [(ngModel)]="name" />
     <br />
-    <label for="publish-date">Publish date: </label>
-    <input type="text" id="publish-date" [(ngModel)]="publishDate" />
+    <label for="publishDate">Publish Date: </label>
+    <br />
+    <input type="date" id="publishDate" [(ngModel)]="publishDate" />
     <br />
     <label for="author">Author: </label>
+    <br />
     <input type="text" id="author" [(ngModel)]="author" />
     <br />
-    <button (click)="add()">Add to course</button>
+    <button
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
+      (click)="add()"
+      [disabled]="!name || !publishDate || !author"
+    >
+      Add Book
+    </button>
   </div>
-  <div>
-    <h1>Book list</h1>
-    @if( bookList.length === 0){
-    <h2>-Book list is empty-</h2>
-    }@else{
-    <ol>
-      @for( book of bookList; track $index){
-      <li [style.marginBottom]="'20px'">
-        Name: {{ book.name }}
-        <br />
-        Publish date: {{ book.publishDate }}
-        <br />
-        Author: {{ book.author }}
-      </li>
+  <table class="border-2 border-black">
+    <thead>
+      <tr>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">Name</th>
+        <th class="px-4 border-2 border-black">Publish Date</th>
+        <th class="px-4 border-2 border-black">Author</th>
+        <th class="px-4 border-2 border-black">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (book of bookList; track $index) {
+      <tr>
+        <td class="border-2 border-black">{{ $index + 1 }}</td>
+        <td class="border-2 border-black">
+          {{ book.name }}
+          <button
+            (click)="editField($index, 'name', book.name)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          {{ book.publishDate }}
+          <button
+            (click)="editField($index, 'publishDate', book.publishDate)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          {{ book.author }}
+          <button
+            (click)="editField($index, 'author', book.author)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          <div class="py-2">
+            <button
+              (click)="deleteBook($index)"
+              class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
       }
-    </ol>
-    }
-  </div>
+    </tbody>
+  </table>
 </main>
