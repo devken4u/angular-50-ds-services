@@ -1,27 +1,63 @@
 <main>
   <div>
-    <label for="name">Name: </label>
+    <label for="name">Car Model Name: </label>
+    <br />
     <input type="text" id="name" [(ngModel)]="name" />
     <br />
     <label for="year">Year: </label>
+    <br />
     <input type="number" id="year" [(ngModel)]="year" />
     <br />
-    <button (click)="add()">Add to car models</button>
+    <button
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
+      (click)="add()"
+    >
+      Add Car Model
+    </button>
   </div>
-  <div>
-    <h1>Car Model list</h1>
-    @if( carModelList.length === 0){
-    <h2>-Car model list is empty-</h2>
-    }@else{
-    <ol>
-      @for( car of carModelList; track $index){
-      <li [style.marginBottom]="'20px'">
-        Name: {{ car.name }} <br />
-        Year: {{ car.year }}
-      </li>
-
+  <table class="border-2 border-black">
+    <thead>
+      <tr>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">Name</th>
+        <th class="px-4 border-2 border-black">Year</th>
+        <th class="px-4 border-2 border-black">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (carModel of carModelList; track $index) {
+      <tr>
+        <td class="border-2 border-black">{{ $index + 1 }}</td>
+        <td class="border-2 border-black">
+          {{ carModel.name }}
+          <button
+            (click)="editField($index, 'name', carModel.name)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          {{ carModel.year }}
+          <button
+            (click)="editField($index, 'year', carModel.year)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          <div class="py-2">
+            <button
+              (click)="deleteCarModel($index)"
+              class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
       }
-    </ol>
-    }
-  </div>
+    </tbody>
+  </table>
 </main>
