@@ -1,27 +1,63 @@
 <main>
   <div>
-    <label for="name">Name: </label>
-    <input type="text" id="name" [(ngModel)]="name" />
-    <br />
     <label for="code">Code: </label>
+    <br />
     <input type="text" id="code" [(ngModel)]="code" />
     <br />
-    <button (click)="add()">Add to course</button>
+    <label for="name">Name: </label>
+    <br />
+    <input type="text" id="name" [(ngModel)]="name" />
+    <br />
+    <button
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
+      (click)="add()"
+    >
+      Add Course
+    </button>
   </div>
-  <div>
-    <h1>Course list</h1>
-    @if( courseList.length === 0){
-    <h2>-Course list is empty-</h2>
-    }@else{
-    <ol>
-      @for( course of courseList; track $index){
-      <li [style.marginBottom]="'20px'">
-        Name: {{ course.name }}
-        <br />
-        Code: {{ course.code }}
-      </li>
+  <table class="border-2 border-black">
+    <thead>
+      <tr>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">Code</th>
+        <th class="px-4 border-2 border-black">Name</th>
+        <th class="px-4 border-2 border-black">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (course of courseList; track $index) {
+      <tr>
+        <td class="border-2 border-black">{{ $index + 1 }}</td>
+        <td class="border-2 border-black">
+          {{ course.code }}
+          <button
+            (click)="editField($index, 'code', course.code)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          {{ course.name }}
+          <button
+            (click)="editField($index, 'name', course.name)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          <div class="py-2">
+            <button
+              (click)="deleteCourse($index)"
+              class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
       }
-    </ol>
-    }
-  </div>
+    </tbody>
+  </table>
 </main>
