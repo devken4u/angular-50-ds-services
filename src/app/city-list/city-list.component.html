@@ -1,20 +1,49 @@
 <main>
   <div>
     <label for="city">City: </label>
+    <br />
     <input type="text" id="city" [(ngModel)]="city" />
     <br />
-    <button (click)="add()">Add to cities</button>
+    <button
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
+      (click)="add()"
+    >
+      Add City
+    </button>
   </div>
-  <div>
-    <h1>City list</h1>
-    @if( cityList.length === 0){
-    <h2>-City list is empty-</h2>
-    }@else{
-    <ol>
-      @for( city of cityList; track $index){
-      <li [style.marginBottom]="'20px'">City: {{ city.city }}</li>
+  <table class="border-2 border-black">
+    <thead>
+      <tr>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">City</th>
+        <th class="px-4 border-2 border-black">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (city of cityList; track $index) {
+      <tr>
+        <td class="border-2 border-black">{{ $index + 1 }}</td>
+        <td class="border-2 border-black">
+          {{ city.city }}
+          <button
+            (click)="editField($index, city.city)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          <div class="py-2">
+            <button
+              (click)="deleteCity($index)"
+              class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
       }
-    </ol>
-    }
-  </div>
+    </tbody>
+  </table>
 </main>
