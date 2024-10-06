@@ -1,23 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../types';
+import { ProductService } from '../services/product.service';
 
 @Component({
-  selector: 'app-product-list',
+  selector: 'app-product',
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
   productList: Product[] = [];
-
   name: string = '';
-  price: number = 0;
+  price: number | null = null;
 
-  add() {
-    this.productList.push({
-      name: this.name,
-      price: this.price,
-    });
-    this.name = '';
-    this.price = 0;
+  constructor(private productService: ProductService) {}
+
+  ngOnInit(): void {
+    this.productList = this.productService.getProductList();
+  }
+
+  add(): void {
+    if (this.name && this.price !== null) {
+      this.productService.addProduct({ name: this.name, price: this.price });
+      this.name = '';
+      this.price = null;
+    }
+  }
+
+  deleteProduct(index: number): void {
+    this.productService.deleteProduct(index);
+  }
+
+  editField(index: number, fieldName: string, currentValue: any) {
+    const value = prompt(fieldName, currentValue);
+    if (value !== null) {
+      const tempProduct = {
+        ...this.productList[index],
+        [fieldName]: fieldName === 'price' ? Number(value) : value,
+      };
+      this.update(index, tempProduct);
+    }
+  }
+
+  update(index: number, product: Product): void {
+    this.productService.editProduct(index, product);
   }
 }
