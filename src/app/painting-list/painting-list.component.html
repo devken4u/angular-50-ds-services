@@ -1,26 +1,64 @@
 <main>
   <div>
-    <label for="title">Painting Title: </label>
+    <label for="title">Title: </label>
+    <br />
     <input type="text" id="title" [(ngModel)]="title" />
     <br />
     <label for="year">Year: </label>
+    <br />
     <input type="number" id="year" [(ngModel)]="year" />
     <br />
-    <button (click)="add()">Add to painting list</button>
+    <button
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
+      (click)="add()"
+      [disabled]="!title || !year"
+    >
+      Add Painting
+    </button>
   </div>
-  <div>
-    <h1>Painting List</h1>
-    @if( paintingList.length === 0){
-    <h2>-Painting list is empty-</h2>
-    }@else{
-    <ol>
-      @for( painting of paintingList; track $index){
-      <li [style.marginBottom]="'20px'">
-        Painting Title: {{ painting.title }} <br />
-        Year: {{ painting.year }}
-      </li>
+  <table class="border-2 border-black">
+    <thead>
+      <tr>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">Title</th>
+        <th class="px-4 border-2 border-black">Year</th>
+        <th class="px-4 border-2 border-black">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (painting of paintingList; track $index) {
+      <tr>
+        <td class="border-2 border-black">{{ $index + 1 }}</td>
+        <td class="border-2 border-black">
+          {{ painting.title }}
+          <button
+            (click)="editField($index, 'title', painting.title)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          {{ painting.year }}
+          <button
+            (click)="editField($index, 'year', painting.year)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          <div class="py-2">
+            <button
+              (click)="deletePainting($index)"
+              class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
       }
-    </ol>
-    }
-  </div>
+    </tbody>
+  </table>
 </main>
