@@ -1,26 +1,64 @@
 <main>
   <div>
-    <label for="name">Game Name: </label>
+    <label for="name">Name: </label>
+    <br />
     <input type="text" id="name" [(ngModel)]="name" />
     <br />
-    <label for="year">Release Year: </label>
+    <label for="year">Year: </label>
+    <br />
     <input type="number" id="year" [(ngModel)]="year" />
     <br />
-    <button (click)="add()">Add to games</button>
+    <button
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
+      (click)="add()"
+      [disabled]="!name || !year"
+    >
+      Add Game
+    </button>
   </div>
-  <div>
-    <h1>Game list</h1>
-    @if( gameList.length === 0){
-    <h2>-Game list is empty-</h2>
-    }@else{
-    <ol>
-      @for( game of gameList; track $index){
-      <li [style.marginBottom]="'20px'">
-        Game Name: {{ game.name }} <br />
-        Release Year: {{ game.year }}
-      </li>
+  <table class="border-2 border-black">
+    <thead>
+      <tr>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">Name</th>
+        <th class="px-4 border-2 border-black">Year</th>
+        <th class="px-4 border-2 border-black">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (game of gameList; track $index) {
+      <tr>
+        <td class="border-2 border-black">{{ $index + 1 }}</td>
+        <td class="border-2 border-black">
+          {{ game.name }}
+          <button
+            (click)="editField($index, 'name', game.name)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          {{ game.year }}
+          <button
+            (click)="editField($index, 'year', game.year)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          <div class="py-2">
+            <button
+              (click)="deleteGame($index)"
+              class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
       }
-    </ol>
-    }
-  </div>
+    </tbody>
+  </table>
 </main>
