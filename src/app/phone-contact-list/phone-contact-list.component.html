@@ -1,26 +1,64 @@
 <main>
   <div>
-    <label for="name">Contact Name: </label>
+    <label for="name">Name: </label>
+    <br />
     <input type="text" id="name" [(ngModel)]="name" />
     <br />
     <label for="phoneNumber">Phone Number: </label>
-    <input type="tel" id="phoneNumber" [(ngModel)]="phoneNumber" />
     <br />
-    <button (click)="add()">Add to contacts</button>
+    <input type="text" id="phoneNumber" [(ngModel)]="phoneNumber" />
+    <br />
+    <button
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
+      (click)="add()"
+      [disabled]="!name || !phoneNumber"
+    >
+      Add Contact
+    </button>
   </div>
-  <div>
-    <h1>Contact list</h1>
-    @if( contactList.length === 0){
-    <h2>-Contact list is empty-</h2>
-    }@else{
-    <ol>
-      @for( contact of contactList; track $index){
-      <li [style.marginBottom]="'20px'">
-        Contact Name: {{ contact.name }} <br />
-        Phone Number: {{ contact.phoneNumber }}
-      </li>
+  <table class="border-2 border-black">
+    <thead>
+      <tr>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">Name</th>
+        <th class="px-4 border-2 border-black">Phone Number</th>
+        <th class="px-4 border-2 border-black">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (contact of contactList; track $index) {
+      <tr>
+        <td class="border-2 border-black">{{ $index + 1 }}</td>
+        <td class="border-2 border-black">
+          {{ contact.name }}
+          <button
+            (click)="editField($index, 'name', contact.name)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          {{ contact.phoneNumber }}
+          <button
+            (click)="editField($index, 'phoneNumber', contact.phoneNumber)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          <div class="py-2">
+            <button
+              (click)="deleteContact($index)"
+              class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
       }
-    </ol>
-    }
-  </div>
+    </tbody>
+  </table>
 </main>
