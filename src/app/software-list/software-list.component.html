@@ -1,20 +1,50 @@
 <main>
   <div>
-    <label for="name">Software Name: </label>
+    <label for="name">Name: </label>
+    <br />
     <input type="text" id="name" [(ngModel)]="name" />
     <br />
-    <button (click)="add()">Add to software</button>
+    <button
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
+      (click)="add()"
+      [disabled]="!name"
+    >
+      Add Software
+    </button>
   </div>
-  <div>
-    <h1>Software list</h1>
-    @if( softwareList.length === 0){
-    <h2>-Software list is empty-</h2>
-    }@else{
-    <ol>
-      @for( software of softwareList; track $index){
-      <li [style.marginBottom]="'20px'">Software Name: {{ software.name }}</li>
+  <table class="border-2 border-black">
+    <thead>
+      <tr>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">Name</th>
+        <th class="px-4 border-2 border-black">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (software of softwareList; track $index) {
+      <tr>
+        <td class="border-2 border-black">{{ $index + 1 }}</td>
+        <td class="border-2 border-black">
+          {{ software.name }}
+          <button
+            (click)="editField($index, 'name', software.name)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          <div class="py-2">
+            <button
+              (click)="deleteSoftware($index)"
+              class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
       }
-    </ol>
-    }
-  </div>
+    </tbody>
+  </table>
 </main>
