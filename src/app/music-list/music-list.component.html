@@ -1,26 +1,64 @@
 <main>
   <div>
-    <label for="title">Song Title: </label>
+    <label for="title">Title: </label>
+    <br />
     <input type="text" id="title" [(ngModel)]="title" />
     <br />
     <label for="artist">Artist: </label>
+    <br />
     <input type="text" id="artist" [(ngModel)]="artist" />
     <br />
-    <button (click)="add()">Add to music list</button>
+    <button
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
+      (click)="add()"
+      [disabled]="!title || !artist"
+    >
+      Add Music
+    </button>
   </div>
-  <div>
-    <h1>Music list</h1>
-    @if( musicList.length === 0){
-    <h2>-Music list is empty-</h2>
-    }@else{
-    <ol>
-      @for( music of musicList; track $index){
-      <li [style.marginBottom]="'20px'">
-        Song Title: {{ music.title }} <br />
-        Artist: {{ music.artist }}
-      </li>
+  <table class="border-2 border-black">
+    <thead>
+      <tr>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">Title</th>
+        <th class="px-4 border-2 border-black">Artist</th>
+        <th class="px-4 border-2 border-black">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (music of musicList; track $index) {
+      <tr>
+        <td class="border-2 border-black">{{ $index + 1 }}</td>
+        <td class="border-2 border-black">
+          {{ music.title }}
+          <button
+            (click)="editField($index, 'title', music.title)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          {{ music.artist }}
+          <button
+            (click)="editField($index, 'artist', music.artist)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          <div class="py-2">
+            <button
+              (click)="deleteMusic($index)"
+              class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
       }
-    </ol>
-    }
-  </div>
+    </tbody>
+  </table>
 </main>
