@@ -1,26 +1,64 @@
 <main>
   <div>
     <label for="place">Place: </label>
+    <br />
     <input type="text" id="place" [(ngModel)]="place" />
     <br />
     <label for="country">Country: </label>
+    <br />
     <input type="text" id="country" [(ngModel)]="country" />
     <br />
-    <button (click)="add()">Add to destinations</button>
+    <button
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
+      (click)="add()"
+      [disabled]="!place || !country"
+    >
+      Add Destination
+    </button>
   </div>
-  <div>
-    <h1>Destination List</h1>
-    @if( destinationList.length === 0){
-    <h2>-Destination list is empty-</h2>
-    }@else{
-    <ol>
-      @for( destination of destinationList; track $index){
-      <li [style.marginBottom]="'20px'">
-        Place: {{ destination.place }} <br />
-        Country: {{ destination.country }}
-      </li>
+  <table class="border-2 border-black">
+    <thead>
+      <tr>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">Place</th>
+        <th class="px-4 border-2 border-black">Country</th>
+        <th class="px-4 border-2 border-black">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (destination of destinationList; track $index) {
+      <tr>
+        <td class="border-2 border-black">{{ $index + 1 }}</td>
+        <td class="border-2 border-black">
+          {{ destination.place }}
+          <button
+            (click)="editField($index, 'place', destination.place)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          {{ destination.country }}
+          <button
+            (click)="editField($index, 'country', destination.country)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          <div class="py-2">
+            <button
+              (click)="deleteDestination($index)"
+              class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
       }
-    </ol>
-    }
-  </div>
+    </tbody>
+  </table>
 </main>
