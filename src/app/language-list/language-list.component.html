@@ -1,20 +1,50 @@
 <main>
   <div>
     <label for="language">Language: </label>
+    <br />
     <input type="text" id="language" [(ngModel)]="language" />
     <br />
-    <button (click)="add()">Add to languages</button>
+    <button
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
+      (click)="add()"
+      [disabled]="!language"
+    >
+      Add Language
+    </button>
   </div>
-  <div>
-    <h1>Language list</h1>
-    @if( languageList.length === 0){
-    <h2>-Language list is empty-</h2>
-    }@else{
-    <ol>
-      @for( language of languageList; track $index){
-      <li [style.marginBottom]="'20px'">Language: {{ language.language }}</li>
+  <table class="border-2 border-black">
+    <thead>
+      <tr>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">Language</th>
+        <th class="px-4 border-2 border-black">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (lang of languageList; track $index) {
+      <tr>
+        <td class="border-2 border-black">{{ $index + 1 }}</td>
+        <td class="border-2 border-black">
+          {{ lang.language }}
+          <button
+            (click)="editField($index, 'language', lang.language)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          <div class="py-2">
+            <button
+              (click)="deleteLanguage($index)"
+              class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
       }
-    </ol>
-    }
-  </div>
+    </tbody>
+  </table>
 </main>
