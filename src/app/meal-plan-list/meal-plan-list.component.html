@@ -1,20 +1,46 @@
 <main>
   <div>
     <label for="name">Meal Name: </label>
+    <br />
     <input type="text" id="name" [(ngModel)]="name" />
     <br />
-    <button (click)="add()">Add to meal plan</button>
+    <button
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
+      (click)="add()"
+      [disabled]="!name"
+    >
+      Add Meal
+    </button>
   </div>
-  <div>
-    <h1>Meal Plan</h1>
-    @if( mealList.length === 0){
-    <h2>-Meal plan is empty-</h2>
-    }@else{
-    <ol>
-      @for( meal of mealList; track $index){
-      <li [style.marginBottom]="'20px'">Meal Name: {{ meal.name }}</li>
-      }
-    </ol>
-    }
-  </div>
+  <table class="border-2 border-black">
+    <thead>
+      <tr>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">Name</th>
+        <th class="px-4 border-2 border-black">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let meal of mealList; index as i">
+        <td class="border-2 border-black">{{ i + 1 }}</td>
+        <td class="border-2 border-black">
+          {{ meal.name }}
+          <button
+            (click)="editField(i, 'name', meal.name)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          <button
+            (click)="deleteMeal(i)"
+            class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </main>
