@@ -1,26 +1,60 @@
 <main>
   <div>
     <label for="projectName">Project Name: </label>
+    <br />
     <input type="text" id="projectName" [(ngModel)]="projectName" />
     <br />
     <label for="budget">Budget: </label>
+    <br />
     <input type="number" id="budget" [(ngModel)]="budget" />
     <br />
-    <button (click)="add()">Add to budget list</button>
+    <button
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
+      (click)="add()"
+      [disabled]="!projectName || !budget"
+    >
+      Add Budget
+    </button>
   </div>
-  <div>
-    <h1>Budget List</h1>
-    @if( budgetList.length === 0){
-    <h2>-Budget list is empty-</h2>
-    }@else{
-    <ol>
-      @for( budgetItem of budgetList; track $index){
-      <li [style.marginBottom]="'20px'">
-        Project Name: {{ budgetItem.projectName }} <br />
-        Budget: {{ budgetItem.budget }}
-      </li>
-      }
-    </ol>
-    }
-  </div>
+  <table class="border-2 border-black">
+    <thead>
+      <tr>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">Project Name</th>
+        <th class="px-4 border-2 border-black">Budget</th>
+        <th class="px-4 border-2 border-black">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let budget of budgetList; index as i">
+        <td class="border-2 border-black">{{ i + 1 }}</td>
+        <td class="border-2 border-black">
+          {{ budget.projectName }}
+          <button
+            (click)="editField(i, 'projectName', budget.projectName)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          {{ budget.budget | currency }}
+          <button
+            (click)="editField(i, 'budget', budget.budget.toString())"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          <button
+            (click)="deleteBudget(i)"
+            class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </main>
