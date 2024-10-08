@@ -1,26 +1,60 @@
 <main>
   <div>
-    <label for="name">Framework Name: </label>
-    <input type="text" id="name" [(ngModel)]="name" />
+    <label for="frameworkName">Framework Name: </label>
     <br />
-    <label for="version">Version: </label>
-    <input type="text" id="version" [(ngModel)]="version" />
+    <input type="text" id="frameworkName" [(ngModel)]="frameworkName" />
     <br />
-    <button (click)="add()">Add to framework list</button>
+    <label for="frameworkVersion">Version: </label>
+    <br />
+    <input type="text" id="frameworkVersion" [(ngModel)]="frameworkVersion" />
+    <br />
+    <button
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
+      (click)="add()"
+      [disabled]="!frameworkName || !frameworkVersion"
+    >
+      Add Framework
+    </button>
   </div>
-  <div>
-    <h1>Framework List</h1>
-    @if( frameworkList.length === 0){
-    <h2>-Framework list is empty-</h2>
-    }@else{
-    <ol>
-      @for( framework of frameworkList; track $index){
-      <li [style.marginBottom]="'20px'">
-        Framework Name: {{ framework.name }} <br />
-        Version: {{ framework.version }}
-      </li>
-      }
-    </ol>
-    }
-  </div>
+  <table class="border-2 border-black">
+    <thead>
+      <tr>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">Framework Name</th>
+        <th class="px-4 border-2 border-black">Version</th>
+        <th class="px-4 border-2 border-black">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let framework of frameworkList; index as i">
+        <td class="border-2 border-black">{{ i + 1 }}</td>
+        <td class="border-2 border-black">
+          {{ framework.name }}
+          <button
+            (click)="editField(i, 'name', framework.name)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          {{ framework.version }}
+          <button
+            (click)="editField(i, 'version', framework.version)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          <button
+            (click)="deleteFramework(i)"
+            class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </main>
