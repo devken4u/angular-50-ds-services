@@ -1,26 +1,60 @@
 <main>
   <div>
     <label for="title">Podcast Title: </label>
+    <br />
     <input type="text" id="title" [(ngModel)]="title" />
     <br />
     <label for="speaker">Speaker: </label>
+    <br />
     <input type="text" id="speaker" [(ngModel)]="speaker" />
     <br />
-    <button (click)="add()">Add to podcast list</button>
+    <button
+      class="p-2 my-2 font-bold text-white bg-blue-500 rounded-md active:scale-95"
+      (click)="add()"
+      [disabled]="!title || !speaker"
+    >
+      Add Podcast
+    </button>
   </div>
-  <div>
-    <h1>Podcast List</h1>
-    @if( podcastList.length === 0){
-    <h2>-Podcast list is empty-</h2>
-    }@else{
-    <ol>
-      @for( podcast of podcastList; track $index){
-      <li [style.marginBottom]="'20px'">
-        Podcast Title: {{ podcast.title }} <br />
-        Speaker: {{ podcast.speaker }}
-      </li>
-      }
-    </ol>
-    }
-  </div>
+  <table class="border-2 border-black">
+    <thead>
+      <tr>
+        <th class="px-4 border-2 border-black">No.</th>
+        <th class="px-4 border-2 border-black">Title</th>
+        <th class="px-4 border-2 border-black">Speaker</th>
+        <th class="px-4 border-2 border-black">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let podcast of podcastList; index as i">
+        <td class="border-2 border-black">{{ i + 1 }}</td>
+        <td class="border-2 border-black">
+          {{ podcast.title }}
+          <button
+            (click)="editField(i, 'title', podcast.title)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          {{ podcast.speaker }}
+          <button
+            (click)="editField(i, 'speaker', podcast.speaker)"
+            class="mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            🖋
+          </button>
+        </td>
+        <td class="border-2 border-black">
+          <button
+            (click)="deletePodcast(i)"
+            class="px-2 mx-2 font-bold bg-gray-300 border border-black rounded-md active:scale-95"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </main>
