@@ -1,20 +1,51 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PresentationService } from '../services/presentation.service';
 import { Presentation } from '../types';
 
 @Component({
-  selector: 'app-presentation-list',
+  selector: 'app-presentation',
   templateUrl: './presentation-list.component.html',
-  styleUrl: './presentation-list.component.css',
+  styleUrls: ['./presentation-list.component.css'],
 })
-export class PresentationListComponent {
+export class PresentationListComponent implements OnInit {
   presentationList: Presentation[] = [];
-
   topicTitle: string = '';
 
-  add() {
-    this.presentationList.push({
-      topicTitle: this.topicTitle,
-    });
-    this.topicTitle = '';
+  constructor(private presentationService: PresentationService) {}
+
+  ngOnInit(): void {
+    this.presentationList = this.presentationService.getPresentationList();
+  }
+
+  add(): void {
+    if (this.topicTitle) {
+      this.presentationService.addPresentation({
+        topicTitle: this.topicTitle,
+      });
+      this.topicTitle = '';
+    }
+  }
+
+  deletePresentation(index: number): void {
+    this.presentationService.deletePresentation(index);
+  }
+
+  editField(
+    index: number,
+    fieldName: keyof Presentation,
+    currentValue: string
+  ) {
+    const value = prompt(`Edit ${fieldName}`, currentValue);
+    if (value !== null && value !== '') {
+      const updatedPresentation = {
+        ...this.presentationList[index],
+        [fieldName]: value,
+      };
+      this.update(index, updatedPresentation);
+    }
+  }
+
+  update(index: number, presentation: Presentation): void {
+    this.presentationService.editPresentation(index, presentation);
   }
 }
